@@ -110,11 +110,11 @@ services:
 
   js:
     <<: *default-assets
-    command: "yarn build"
+    command: "yarn build && RAILS_ENV=production bundle exec rails assets:precompile"
 
   css:
     <<: *default-assets
-    command: "yarn build:css"
+    command: "yarn build:css && RAILS_ENV=production bundle exec rails assets:precompile"
   
   stripe:
     image: stripe/stripe-cli:latest
